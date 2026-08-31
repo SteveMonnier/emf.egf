@@ -35,14 +35,13 @@
 	</licenses>
 	
 	<properties>
-		<tycho-version>2.7.5</tycho-version>
-		<tycho-extras-version>${tycho-version}</tycho-extras-version>
-		<platform-version-name>2023-03</platform-version-name>
+		<tycho-version>4.0.13</tycho-version>
+		<tycho-extras-version>4.0.13</tycho-extras-version>
+		<platform-version-name>2025-09</platform-version-name>
 		
 		<tycho.scmUrl>scm:git:https://git.eclipse.org/r/egf/org.eclipse.emf.egf</tycho.scmUrl>
 		
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.release>17</maven.compiler.release>
 
 
 		<jacoco.coverage.skip>false</jacoco.coverage.skip>
@@ -137,7 +136,7 @@
 					<version>${tycho-version}</version>
 					<configuration>
 						<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
-						<executionEnvironment>JavaSE-17</executionEnvironment>
+						<executionEnvironment>JavaSE-21</executionEnvironment>
 						<dependency-resolution>
 							<optionalDependencies>ignore</optionalDependencies>
 						</dependency-resolution>
@@ -185,6 +184,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
+				<module>releng/org.eclipse.egf.targets</module>
 				<!-- plugins -->
 				<module>examples/workspace/org.eclipse.egf.examples.installer</module>
 				<module>examples/workspace/org.eclipse.egf.example.emf.docgen.html</module>
@@ -350,7 +350,6 @@
 							<classifier>releng/org.eclipse.egf.targets/core-${platform-version-name}</classifier>
 						</artifact>
 					</target>
-					<includePackedArtifacts>true</includePackedArtifacts>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -361,12 +360,25 @@
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 					</archive>
+					<excludes>
+						<feature id="org.eclipse.egf.doc.feature"/>
+						<plugin id="org.eclipse.egf.doc.user"/>
+						<plugin id="org.eclipse.egf.engine.doc"/>
+						<plugin id="org.eclipse.egf.engine.doc.pattern"/>
+					</excludes>
 				</configuration>
 				<executions>
 					<execution>
 						<id>plugin-source</id>
 						<goals>
 							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>source-feature</id>
+						<phase>package</phase>
+						<goals>
+							<goal>feature-source</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -386,31 +398,6 @@
 						<version>${tycho-extras-version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-source-feature-plugin</artifactId>
-				<version>${tycho-extras-version}</version>
-				<configuration>
-					<archive>
-						<addMavenDescriptor>false</addMavenDescriptor>
-					</archive>
-					<excludes>
-  						<feature id="org.eclipse.egf.doc.feature"/>
-  						<plugin id="org.eclipse.egf.doc.user"/>
-  						<plugin id="org.eclipse.egf.engine.doc"/>
-  						<plugin id="org.eclipse.egf.engine.doc.pattern"/>
-					</excludes>
-				</configuration>
-				<executions>
-					<execution>
-						<id>source-feature</id>
-						<phase>package</phase>
-						<goals>
-							<goal>source-feature</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<!-- Enabling use of jacoco -->
 			<plugin>
@@ -440,9 +427,8 @@
 					<artifactId>target-platform-configuration</artifactId>
 					<version>${tycho-version}</version>
 					<configuration>
-						<resolver>p2</resolver>
 						<pomDependencies>consider</pomDependencies>
-						<executionEnvironment>JavaSE-17</executionEnvironment>
+						<executionEnvironment>JavaSE-21</executionEnvironment>
 						<environments>
 							<environment>
 								<os>linux</os>
