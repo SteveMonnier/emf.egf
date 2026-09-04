@@ -20,7 +20,7 @@
 	
 	<groupId>org.eclipse.egf</groupId>
 	<artifactId>egf_root</artifactId>
-	<version>1.6.4-SNAPSHOT</version>
+	<version>1.6.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<licenses>
@@ -144,7 +144,7 @@
 							<artifact>
 								<groupId>org.eclipse.egf</groupId>
 								<artifactId>egf_root</artifactId>
-								<version>1.6.4-SNAPSHOT</version>
+								<version>1.6.5-SNAPSHOT</version>
 								<classifier>releng/org.eclipse.egf.targets/core-${platform-version-name}</classifier>
 							</artifact>
 						</target>
@@ -346,7 +346,7 @@
 						<artifact>
 							<groupId>org.eclipse.egf</groupId>
 							<artifactId>egf_root</artifactId>
-							<version>1.6.4-SNAPSHOT</version>
+							<version>1.6.5-SNAPSHOT</version>
 							<classifier>releng/org.eclipse.egf.targets/core-${platform-version-name}</classifier>
 						</artifact>
 					</target>
