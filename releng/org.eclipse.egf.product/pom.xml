@@ -55,7 +55,12 @@
 									<archiveFileName>EGF_product</archiveFileName>
 								</product>
 							</products>
-							</configuration>
+							<formats>
+								<linux>zip</linux>
+								<macosx>zip</macosx>
+								<windows>zip</windows>
+         			       </formats>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
