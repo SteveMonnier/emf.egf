@@ -54,7 +54,7 @@ location jet "https://download.eclipse.org/modeling/m2t/updates/" {
 	org.eclipse.jet.sdk.feature.group lazy
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/stable/7.2.0-S20230616-100446/2023-03" {
+location sirius "https://download.eclipse.org/sirius/updates/releases/7.2.0/2023-03" {
 	org.eclipse.sirius.runtime.aql.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.feature.group lazy

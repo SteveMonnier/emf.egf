@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.egf.portfolio.atl.examples.installer;singleton:=true
-Bundle-Version: 1.6.4.qualifier
+Bundle-Version: 1.6.5.qualifier
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.egf.portfolio.atl.examples.installer

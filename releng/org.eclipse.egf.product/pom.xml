@@ -20,7 +20,7 @@
 	<parent>
 		<groupId>org.eclipse.egf</groupId>
 		<artifactId>egf_root</artifactId>
-		<version>1.6.4-SNAPSHOT</version>
+		<version>1.6.5-SNAPSHOT</version>
 		<relativePath>../..</relativePath>
 	</parent>
 	
@@ -55,7 +55,12 @@
 									<archiveFileName>EGF_product</archiveFileName>
 								</product>
 							</products>
-							</configuration>
+							<formats>
+								<linux>zip</linux>
+								<macosx>zip</macosx>
+								<windows>zip</windows>
+         			       </formats>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

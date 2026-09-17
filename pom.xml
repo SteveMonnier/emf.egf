@@ -20,7 +20,7 @@
 	
 	<groupId>org.eclipse.egf</groupId>
 	<artifactId>egf_root</artifactId>
-	<version>1.6.4-SNAPSHOT</version>
+	<version>1.6.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<licenses>
@@ -35,8 +35,8 @@
 	</licenses>
 	
 	<properties>
-		<tycho-version>2.7.5</tycho-version>
-		<tycho-extras-version>${tycho-version}</tycho-extras-version>
+		<tycho-version>4.0.13</tycho-version>
+		<tycho-extras-version>4.0.13</tycho-extras-version>
 		<platform-version-name>2023-03</platform-version-name>
 		
 		<tycho.scmUrl>scm:git:https://git.eclipse.org/r/egf/org.eclipse.emf.egf</tycho.scmUrl>
@@ -46,7 +46,7 @@
 
 
 		<jacoco.coverage.skip>false</jacoco.coverage.skip>
-		<jacoco.release>0.8.8</jacoco.release>
+		<jacoco.release>0.8.12</jacoco.release>
 		<jacoco.reportPath>./target/jacoco.exec</jacoco.reportPath>
 		<jacoco.includes>org.eclipse.egf.*</jacoco.includes>
 		<jacoco.excludes>org.eclipse.egf.emf.*</jacoco.excludes>
@@ -70,7 +70,7 @@
 				<plugin>
 					<groupId>org.eclipse.cbi.maven.plugins</groupId>
 					<artifactId>eclipse-jarsigner-plugin</artifactId>
-					<version>1.3.2</version>
+					<version>1.5.4</version>
 					<executions>
 						<execution>
 							<id>sign</id>
@@ -145,7 +145,7 @@
 							<artifact>
 								<groupId>org.eclipse.egf</groupId>
 								<artifactId>egf_root</artifactId>
-								<version>1.6.4-SNAPSHOT</version>
+								<version>1.6.5-SNAPSHOT</version>
 								<classifier>releng/org.eclipse.egf.targets/core-${platform-version-name}</classifier>
 							</artifact>
 						</target>
@@ -346,11 +346,10 @@
 						<artifact>
 							<groupId>org.eclipse.egf</groupId>
 							<artifactId>egf_root</artifactId>
-							<version>1.6.4-SNAPSHOT</version>
+							<version>1.6.5-SNAPSHOT</version>
 							<classifier>releng/org.eclipse.egf.targets/core-${platform-version-name}</classifier>
 						</artifact>
 					</target>
-					<includePackedArtifacts>true</includePackedArtifacts>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -361,12 +360,25 @@
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 					</archive>
+					<excludes>
+						<feature id="org.eclipse.egf.doc.feature"/>
+						<plugin id="org.eclipse.egf.doc.user"/>
+						<plugin id="org.eclipse.egf.engine.doc"/>
+						<plugin id="org.eclipse.egf.engine.doc.pattern"/>
+					</excludes>
 				</configuration>
 				<executions>
 					<execution>
 						<id>plugin-source</id>
 						<goals>
 							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>source-feature</id>
+						<phase>package</phase>
+						<goals>
+							<goal>feature-source</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -386,31 +398,6 @@
 						<version>${tycho-extras-version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-source-feature-plugin</artifactId>
-				<version>${tycho-extras-version}</version>
-				<configuration>
-					<archive>
-						<addMavenDescriptor>false</addMavenDescriptor>
-					</archive>
-					<excludes>
-  						<feature id="org.eclipse.egf.doc.feature"/>
-  						<plugin id="org.eclipse.egf.doc.user"/>
-  						<plugin id="org.eclipse.egf.engine.doc"/>
-  						<plugin id="org.eclipse.egf.engine.doc.pattern"/>
-					</excludes>
-				</configuration>
-				<executions>
-					<execution>
-						<id>source-feature</id>
-						<phase>package</phase>
-						<goals>
-							<goal>source-feature</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<!-- Enabling use of jacoco -->
 			<plugin>
@@ -440,7 +427,6 @@
 					<artifactId>target-platform-configuration</artifactId>
 					<version>${tycho-version}</version>
 					<configuration>
-						<resolver>p2</resolver>
 						<pomDependencies>consider</pomDependencies>
 						<executionEnvironment>JavaSE-17</executionEnvironment>
 						<environments>
@@ -474,7 +460,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.4.1</version>
+					<version>3.3.1</version>
 					<configuration>
 						<encoding>ISO-8859-1</encoding>
 					</configuration>
@@ -482,7 +468,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-antrun-plugin</artifactId>
-					<version>1.3</version>
+					<version>3.2.0</version>
 				</plugin>
 				<!-- Exclude pom.xml and pom.properties from generated archive (see http://maven.apache.org/shared/maven-archiver/)
 					-->
@@ -516,7 +502,7 @@
 				<plugin>
 					<groupId>org.eclipse.acceleo</groupId>
 					<artifactId>org.eclipse.acceleo.maven</artifactId>
-					<version>3.5.2</version>
+					<version>3.6.4</version>
 					<executions>
 						<execution>
 							<id>acceleo-compile</id>
@@ -527,6 +513,16 @@
 						</execution>
 					</executions>
 				</plugin>
+				<plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.1.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.1.4</version>
+                </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
