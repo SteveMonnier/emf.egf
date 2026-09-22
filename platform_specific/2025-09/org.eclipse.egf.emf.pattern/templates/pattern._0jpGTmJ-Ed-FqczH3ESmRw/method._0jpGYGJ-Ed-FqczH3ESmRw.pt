@@ -76,7 +76,7 @@
 	 * @generated
 	 * @ordered
 	 */
-        <%if (genModel.useGenerics() && genFeature.isListDataType() && genFeature.isSetDefaultValue()) {%>
+        <%if (genFeature.isStaticDefaultValueUncheckedCast()) {%>
 	@SuppressWarnings("unchecked")
         <%}%>
         <%if (isJDK50 && genFeature.hasAPIDeprecatedTag()) {%>

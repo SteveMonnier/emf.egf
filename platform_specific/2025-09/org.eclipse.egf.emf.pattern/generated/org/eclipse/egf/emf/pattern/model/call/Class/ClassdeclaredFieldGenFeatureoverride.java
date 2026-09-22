@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.5.qualifier
 package org.eclipse.egf.emf.pattern.model.call.Class;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -498,7 +498,7 @@ public class ClassdeclaredFieldGenFeatureoverride {
 					stringBuffer.append(genFeature.getAPITags(genModel.getIndentation(stringBuffer)));
 				}
 				stringBuffer.append(TEXT_8);
-				if (genModel.useGenerics() && genFeature.isListDataType() && genFeature.isSetDefaultValue()) {
+				if (genFeature.isStaticDefaultValueUncheckedCast()) {
 					stringBuffer.append(TEXT_27);
 				}
 				if (isJDK50 && genFeature.hasAPIDeprecatedTag()) {

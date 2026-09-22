@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.5.qualifier
 package org.eclipse.egf.emf.pattern.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -223,18 +223,18 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 	protected final String TEXT_162 = " i = instanceValue.iterator(); i.hasNext(); )";
 	protected final String TEXT_163 = " item : instanceValue)";
 	protected final String TEXT_164 = NL + "\t\t\tresult.append(convert";
-	protected final String TEXT_165 = "((";
-	protected final String TEXT_166 = "));";
-	protected final String TEXT_167 = "ToString(";
-	protected final String TEXT_168 = NL + "\t\t\tresult.append(";
-	protected final String TEXT_169 = NL + "\t\t\tresult.append(' ');" + NL + "\t\t}" + NL
+	protected final String TEXT_165 = "));";
+	protected final String TEXT_166 = "ToString(";
+	protected final String TEXT_167 = NL + "\t\t\tresult.append(";
+	protected final String TEXT_168 = NL + "\t\t\tresult.append(' ');" + NL + "\t\t}" + NL
 			+ "\t\treturn result.substring(0, result.length() - 1);";
-	protected final String TEXT_170 = NL + "\t\tif (instanceValue == null) return null;";
-	protected final String TEXT_171 = ".isInstance(instanceValue))" + NL + "\t\t{" + NL + "\t\t\ttry" + NL + "\t\t\t{";
-	protected final String TEXT_172 = NL + "\t\t\t\tString value = convert";
-	protected final String TEXT_173 = "(((";
-	protected final String TEXT_174 = ")instanceValue).";
-	protected final String TEXT_175 = "());";
+	protected final String TEXT_169 = NL + "\t\tif (instanceValue == null) return null;";
+	protected final String TEXT_170 = ".isInstance(instanceValue))" + NL + "\t\t{" + NL + "\t\t\ttry" + NL + "\t\t\t{";
+	protected final String TEXT_171 = NL + "\t\t\t\tString value = convert";
+	protected final String TEXT_172 = "(((";
+	protected final String TEXT_173 = ")instanceValue).";
+	protected final String TEXT_174 = "());";
+	protected final String TEXT_175 = "((";
 	protected final String TEXT_176 = ")instanceValue);";
 	protected final String TEXT_177 = NL + "\t\t\t\tString value = ";
 	protected final String TEXT_178 = NL + "\t\t\t\tif (value != null) return value;" + NL + "\t\t\t}" + NL
@@ -1222,6 +1222,7 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 							}
 						} else if (genDataType.getItemType() != null) {
 							GenDataType genItemType = genDataType.getItemType();
+							boolean genItemTypeHasDataConverters = genItemType.getGenPackage().isDataTypeConverters();
 							stringBuffer.append(TEXT_161);
 							stringBuffer.append(genModel.getImportedName(
 									genModel.useGenerics() ? "java.lang.StringBuilder" : "java.lang.StringBuffer"));
@@ -1238,89 +1239,87 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 							} else {
 								item = "item";
 								stringBuffer.append(TEXT_99);
-								stringBuffer.append(genModel.getImportedName("java.lang.Object"));
+								stringBuffer
+										.append(genItemTypeHasDataConverters ? genItemType.getObjectInstanceClassName()
+												: genModel.getImportedName("java.lang.Object"));
 								stringBuffer.append(TEXT_163);
 							}
 							stringBuffer.append(TEXT_103);
 							if (genItemType.getGenPackage() == genPackage) {
-								if (genPackage.isDataTypeConverters()) {
+								if (genItemTypeHasDataConverters) {
 									genItemType = genItemType.getObjectType();
 									stringBuffer.append(TEXT_164);
 									stringBuffer.append(genItemType.getName());
-									stringBuffer.append(TEXT_165);
-									stringBuffer.append(genItemType.getObjectInstanceClassName());
-									stringBuffer.append(TEXT_30);
+									stringBuffer.append(TEXT_77);
 									stringBuffer.append(item);
-									stringBuffer.append(TEXT_166);
+									stringBuffer.append(TEXT_165);
 								} else {
 									stringBuffer.append(TEXT_164);
 									stringBuffer.append(genItemType.getName());
-									stringBuffer.append(TEXT_167);
+									stringBuffer.append(TEXT_166);
 									stringBuffer.append(genItemType.getQualifiedClassifierAccessor());
 									stringBuffer.append(TEXT_122);
 									stringBuffer.append(item);
-									stringBuffer.append(TEXT_166);
+									stringBuffer.append(TEXT_165);
 								}
 							} else {
-								if (genItemType.getGenPackage().isDataTypeConverters()) {
+								if (genItemTypeHasDataConverters) {
 									genItemType = genItemType.getObjectType();
-									stringBuffer.append(TEXT_168);
+									stringBuffer.append(TEXT_167);
 									stringBuffer.append(
 											genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor());
 									stringBuffer.append(TEXT_158);
 									stringBuffer.append(genItemType.getName());
-									stringBuffer.append(TEXT_165);
-									stringBuffer.append(genItemType.getObjectInstanceClassName());
-									stringBuffer.append(TEXT_30);
+									stringBuffer.append(TEXT_77);
 									stringBuffer.append(item);
-									stringBuffer.append(TEXT_166);
+									stringBuffer.append(TEXT_165);
 								} else {
-									stringBuffer.append(TEXT_168);
+									stringBuffer.append(TEXT_167);
 									stringBuffer.append(
 											genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor());
 									stringBuffer.append(TEXT_159);
 									stringBuffer.append(genItemType.getQualifiedClassifierAccessor());
 									stringBuffer.append(TEXT_122);
 									stringBuffer.append(item);
-									stringBuffer.append(TEXT_166);
+									stringBuffer.append(TEXT_165);
 								}
 							}
-							stringBuffer.append(TEXT_169);
+							stringBuffer.append(TEXT_168);
 						} else if (!genDataType.getMemberTypes().isEmpty()) {
 							if (!genDataType.isPrimitiveType()) {
-								stringBuffer.append(TEXT_170);
+								stringBuffer.append(TEXT_169);
 								for (GenDataType genMemberType : genDataType.getMemberTypes()) {
 									stringBuffer.append(TEXT_127);
 									stringBuffer.append(genMemberType.getQualifiedClassifierAccessor());
-									stringBuffer.append(TEXT_171);
+									stringBuffer.append(TEXT_170);
 									if (genMemberType.getGenPackage() == genPackage) {
 										if (genPackage.isDataTypeConverters()) {
 											if (genMemberType.getQualifiedInstanceClassName()
 													.equals(genDataType.getQualifiedInstanceClassName())) {
-												stringBuffer.append(TEXT_172);
+												stringBuffer.append(TEXT_171);
 												stringBuffer.append(genMemberType.getName());
 												stringBuffer.append(TEXT_157);
 											} else if (genMemberType.isPrimitiveType() && !isJDK50) {
-												stringBuffer.append(TEXT_172);
+												stringBuffer.append(TEXT_171);
 												stringBuffer.append(genMemberType.getName());
-												stringBuffer.append(TEXT_173);
+												stringBuffer.append(TEXT_172);
 												stringBuffer.append(
 														genMemberType.getObjectType().getImportedInstanceClassName());
-												stringBuffer.append(TEXT_174);
+												stringBuffer.append(TEXT_173);
 												stringBuffer.append(genMemberType.getPrimitiveValueFunction());
-												stringBuffer.append(TEXT_175);
+												stringBuffer.append(TEXT_174);
 											} else {
-												stringBuffer.append(TEXT_172);
+												stringBuffer.append(TEXT_171);
 												stringBuffer.append(genMemberType.getName());
-												stringBuffer.append(TEXT_165);
+												stringBuffer.append(TEXT_175);
 												stringBuffer.append(genMemberType.getObjectType()
 														.getImportedBoundedWildcardInstanceClassName());
 												stringBuffer.append(TEXT_176);
 											}
 										} else {
-											stringBuffer.append(TEXT_172);
+											stringBuffer.append(TEXT_171);
 											stringBuffer.append(genMemberType.getName());
-											stringBuffer.append(TEXT_167);
+											stringBuffer.append(TEXT_166);
 											stringBuffer.append(genMemberType.getQualifiedClassifierAccessor());
 											stringBuffer.append(TEXT_160);
 										}
@@ -1332,7 +1331,7 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 													.getQualifiedEFactoryInternalInstanceAccessor());
 											stringBuffer.append(TEXT_158);
 											stringBuffer.append(genMemberType.getName());
-											stringBuffer.append(TEXT_165);
+											stringBuffer.append(TEXT_175);
 											stringBuffer.append(genMemberType.getObjectInstanceClassName());
 											stringBuffer.append(TEXT_176);
 										} else {
@@ -1357,7 +1356,7 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 										} else {
 											stringBuffer.append(TEXT_179);
 											stringBuffer.append(genMemberType.getName());
-											stringBuffer.append(TEXT_167);
+											stringBuffer.append(TEXT_166);
 											stringBuffer.append(genMemberType.getQualifiedClassifierAccessor());
 											stringBuffer.append(TEXT_122);
 											if (!isJDK50) {
@@ -1437,14 +1436,14 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 					}
 					stringBuffer.append(TEXT_151);
 					stringBuffer.append(genDataType.getName());
-					stringBuffer.append(TEXT_167);
+					stringBuffer.append(TEXT_166);
 					stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.EDataType"));
 					stringBuffer.append(TEXT_189);
 					if (genDataType instanceof GenEnum) {
 						if (genPackage.isDataTypeConverters() || genDataType.hasConverterBody()) {
 							stringBuffer.append(TEXT_156);
 							stringBuffer.append(genDataType.getName());
-							stringBuffer.append(TEXT_165);
+							stringBuffer.append(TEXT_175);
 							stringBuffer.append(genDataType.getImportedInstanceClassName());
 							stringBuffer.append(TEXT_176);
 						} else {
@@ -1455,7 +1454,7 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 						if (genBaseType.getGenPackage() == genPackage) {
 							stringBuffer.append(TEXT_156);
 							stringBuffer.append(genBaseType.getName());
-							stringBuffer.append(TEXT_167);
+							stringBuffer.append(TEXT_166);
 							stringBuffer.append(genBaseType.getQualifiedClassifierAccessor());
 							stringBuffer.append(TEXT_160);
 						} else {
@@ -1471,7 +1470,7 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 						if (genPackage.isDataTypeConverters() || genDataType.hasCreatorBody()) {
 							stringBuffer.append(TEXT_156);
 							stringBuffer.append(genDataType.getName());
-							stringBuffer.append(TEXT_165);
+							stringBuffer.append(TEXT_175);
 							stringBuffer.append(genDataType.getImportedBoundedWildcardInstanceClassName());
 							stringBuffer.append(TEXT_176);
 						} else {
@@ -1503,29 +1502,29 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 							if (genItemType.getGenPackage() == genPackage) {
 								stringBuffer.append(TEXT_164);
 								stringBuffer.append(genItemType.getName());
-								stringBuffer.append(TEXT_167);
+								stringBuffer.append(TEXT_166);
 								stringBuffer.append(genItemType.getQualifiedClassifierAccessor());
 								stringBuffer.append(TEXT_122);
 								stringBuffer.append(item);
-								stringBuffer.append(TEXT_166);
+								stringBuffer.append(TEXT_165);
 							} else {
-								stringBuffer.append(TEXT_168);
+								stringBuffer.append(TEXT_167);
 								stringBuffer.append(
 										genItemType.getGenPackage().getQualifiedEFactoryInternalInstanceAccessor());
 								stringBuffer.append(TEXT_159);
 								stringBuffer.append(genItemType.getQualifiedClassifierAccessor());
 								stringBuffer.append(TEXT_122);
 								stringBuffer.append(item);
-								stringBuffer.append(TEXT_166);
+								stringBuffer.append(TEXT_165);
 							}
-							stringBuffer.append(TEXT_169);
+							stringBuffer.append(TEXT_168);
 						}
 					} else if (!genDataType.getMemberTypes().isEmpty()) {
 						if (genPackage.isDataTypeConverters() || genDataType.hasConverterBody()) {
 							if (genDataType.isPrimitiveType()) {
 								stringBuffer.append(TEXT_154);
 								stringBuffer.append(genDataType.getName());
-								stringBuffer.append(TEXT_173);
+								stringBuffer.append(TEXT_172);
 								stringBuffer.append(genDataType.getObjectInstanceClassName());
 								stringBuffer.append(TEXT_195);
 								if (!isJDK50) {
@@ -1540,15 +1539,15 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 								stringBuffer.append(TEXT_157);
 							}
 						} else {
-							stringBuffer.append(TEXT_170);
+							stringBuffer.append(TEXT_169);
 							for (GenDataType genMemberType : genDataType.getMemberTypes()) {
 								stringBuffer.append(TEXT_127);
 								stringBuffer.append(genMemberType.getQualifiedClassifierAccessor());
-								stringBuffer.append(TEXT_171);
+								stringBuffer.append(TEXT_170);
 								if (genMemberType.getGenPackage() == genPackage) {
-									stringBuffer.append(TEXT_172);
+									stringBuffer.append(TEXT_171);
 									stringBuffer.append(genMemberType.getName());
-									stringBuffer.append(TEXT_167);
+									stringBuffer.append(TEXT_166);
 									stringBuffer.append(genMemberType.getQualifiedClassifierAccessor());
 									stringBuffer.append(TEXT_160);
 								} else {
@@ -1583,7 +1582,7 @@ public class FactoryClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 						} else {
 							stringBuffer.append(TEXT_156);
 							stringBuffer.append(genDataType.getName());
-							stringBuffer.append(TEXT_165);
+							stringBuffer.append(TEXT_175);
 							stringBuffer.append(genDataType.getImportedBoundedWildcardInstanceClassName());
 							stringBuffer.append(TEXT_176);
 						}
