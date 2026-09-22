@@ -49,6 +49,10 @@ location Eclipse-2025-09 "https://download.eclipse.org/releases/2025-09/" {
 	org.eclipse.ecf.core.feature.feature.group lazy
 }
 
+location Orbit-2025-09 "https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-09" {
+	jakarta.annotation-api [1.3.5,2.0.0)
+}
+
 location EMF-Query-2022-08 "https://download.eclipse.org/modeling/emf/query/updates/releases/R202208101410/" {
 	org.eclipse.emf.query.feature.group lazy
 }
