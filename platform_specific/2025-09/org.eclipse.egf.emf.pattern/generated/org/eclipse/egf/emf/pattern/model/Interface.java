@@ -354,7 +354,6 @@ public class Interface extends org.eclipse.egf.emf.pattern.base.GenClassJava {
 	protected final String TEXT_274 = " container = eContainer();" + NL + "\t\treturn container == null ? null : (";
 	protected final String TEXT_275 = ")container.eGet(eContainmentFeature());" + NL + "\t}" + NL;
 	protected final String TEXT_276 = NL + "} //";
-	protected final String TEXT_277 = NL;
 
 	public Interface() {
 		//Here is the constructor
@@ -390,8 +389,8 @@ public class Interface extends org.eclipse.egf.emf.pattern.base.GenClassJava {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_277);
-		stringBuffer.append(TEXT_277);
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_4);
 		return stringBuffer.toString();
 	}
 

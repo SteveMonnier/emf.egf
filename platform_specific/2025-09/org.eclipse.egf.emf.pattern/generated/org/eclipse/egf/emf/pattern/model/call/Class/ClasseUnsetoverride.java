@@ -55,7 +55,6 @@ public class ClasseUnsetoverride {
 	protected final String TEXT_24 = "\t\tsuper.eUnset(featureID);";
 	protected final String TEXT_25 = "\t\teDynamicUnset(featureID);";
 	protected final String TEXT_26 = NL + "\t}" + NL + NL;
-	protected final String TEXT_27 = NL;
 
 	public ClasseUnsetoverride() {
 		//Here is the constructor
@@ -167,8 +166,8 @@ public class ClasseUnsetoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_27);
-		stringBuffer.append(TEXT_27);
+		stringBuffer.append(TEXT_23);
+		stringBuffer.append(TEXT_23);
 		return stringBuffer.toString();
 	}
 

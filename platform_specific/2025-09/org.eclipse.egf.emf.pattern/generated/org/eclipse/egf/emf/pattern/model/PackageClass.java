@@ -485,7 +485,6 @@ public class PackageClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 	protected final String TEXT_349 = "</b></em>' operation." + NL + "\t\t * <!-- begin-user-doc -->" + NL
 			+ "\t\t * <!-- end-user-doc -->";
 	protected final String TEXT_350 = NL + "} //";
-	protected final String TEXT_351 = NL;
 
 	public PackageClass() {
 		//Here is the constructor
@@ -521,8 +520,8 @@ public class PackageClass extends org.eclipse.egf.emf.pattern.base.GenPackageJav
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_351);
-		stringBuffer.append(TEXT_351);
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_4);
 		return stringBuffer.toString();
 	}
 

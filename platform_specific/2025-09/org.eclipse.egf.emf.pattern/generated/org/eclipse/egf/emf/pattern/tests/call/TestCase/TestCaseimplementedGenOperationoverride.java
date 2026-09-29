@@ -41,7 +41,6 @@ public class TestCaseimplementedGenOperationoverride {
 	protected final String TEXT_11 = NL + "\tpublic void test";
 	protected final String TEXT_12 = "()" + NL + "\t{";
 	protected final String TEXT_13 = NL + "\t}";
-	protected final String TEXT_14 = NL;
 
 	public TestCaseimplementedGenOperationoverride() {
 		//Here is the constructor
@@ -97,8 +96,8 @@ public class TestCaseimplementedGenOperationoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_14);
-		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_9);
 		return stringBuffer.toString();
 	}
 

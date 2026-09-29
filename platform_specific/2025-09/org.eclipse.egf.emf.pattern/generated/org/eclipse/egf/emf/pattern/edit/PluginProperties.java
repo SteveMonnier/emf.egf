@@ -50,7 +50,6 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.base.GenModelP
 	protected final String TEXT_15 = NL + "_UI_Unknown_feature = Unspecified" + NL;
 	protected final String TEXT_16 = "_literal = ";
 	protected final String TEXT_17 = " = ";
-	protected final String TEXT_18 = NL;
 
 	public PluginProperties() {
 		//Here is the constructor
@@ -86,8 +85,8 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.base.GenModelP
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_18);
-		stringBuffer.append(TEXT_18);
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_4);
 		return stringBuffer.toString();
 	}
 

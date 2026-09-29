@@ -33,7 +33,6 @@ public class AppEngineWebXML extends org.eclipse.egf.emf.pattern.base.GenModelTe
 			+ "\t<application>";
 	protected final String TEXT_4 = "-editor</application>" + NL + "\t<version>1</version>" + NL
 			+ "\t<threadsafe>true</threadsafe>" + NL + "</appengine-web-app>" + NL;
-	protected final String TEXT_5 = NL;
 
 	public AppEngineWebXML() {
 		//Here is the constructor
@@ -69,8 +68,8 @@ public class AppEngineWebXML extends org.eclipse.egf.emf.pattern.base.GenModelTe
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_5);
+		stringBuffer.append(TEXT_2);
+		stringBuffer.append(TEXT_2);
 		return stringBuffer.toString();
 	}
 

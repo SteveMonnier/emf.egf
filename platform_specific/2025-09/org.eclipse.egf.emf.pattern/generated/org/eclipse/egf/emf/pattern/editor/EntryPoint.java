@@ -64,7 +64,6 @@ public class EntryPoint extends org.eclipse.egf.emf.pattern.base.GenModelJava {
 	protected final String TEXT_25 = " Application\";";
 	protected final String TEXT_26 = NL + "\t}" + NL + "}";
 	protected final String TEXT_27 = NL;
-	protected final String TEXT_28 = NL;
 
 	public EntryPoint() {
 		//Here is the constructor
@@ -100,8 +99,8 @@ public class EntryPoint extends org.eclipse.egf.emf.pattern.base.GenModelJava {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_28);
-		stringBuffer.append(TEXT_28);
+		stringBuffer.append(TEXT_27);
+		stringBuffer.append(TEXT_27);
 		return stringBuffer.toString();
 	}
 

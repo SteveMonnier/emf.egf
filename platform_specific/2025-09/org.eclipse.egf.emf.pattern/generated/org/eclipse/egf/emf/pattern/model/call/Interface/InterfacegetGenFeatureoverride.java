@@ -130,7 +130,6 @@ public class InterfacegetGenFeatureoverride {
 	protected final String TEXT_100 = "get";
 	protected final String TEXT_101 = "().get(";
 	protected final String TEXT_102 = NL + "\t}" + NL;
-	protected final String TEXT_103 = NL;
 
 	public InterfacegetGenFeatureoverride() {
 		//Here is the constructor
@@ -247,8 +246,8 @@ public class InterfacegetGenFeatureoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_103);
-		stringBuffer.append(TEXT_103);
+		stringBuffer.append(TEXT_2);
+		stringBuffer.append(TEXT_2);
 		return stringBuffer.toString();
 	}
 

@@ -1243,7 +1243,6 @@ public class Editor extends org.eclipse.egf.emf.pattern.base.GenPackageJava {
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
 			+ NL + "\tprotected boolean showOutlineView()" + NL + "\t{" + NL + "\t\treturn ";
 	protected final String TEXT_409 = ";" + NL + "\t}" + NL + "}";
-	protected final String TEXT_410 = NL;
 
 	public Editor() {
 		//Here is the constructor
@@ -1279,8 +1278,8 @@ public class Editor extends org.eclipse.egf.emf.pattern.base.GenPackageJava {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_410);
-		stringBuffer.append(TEXT_410);
+		stringBuffer.append(TEXT_5);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 

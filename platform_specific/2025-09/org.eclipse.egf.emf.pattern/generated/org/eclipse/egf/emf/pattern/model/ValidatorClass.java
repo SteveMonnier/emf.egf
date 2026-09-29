@@ -313,7 +313,6 @@ public class ValidatorClass extends org.eclipse.egf.emf.pattern.base.GenPackageJ
 			+ "\t\t// Ensure that you remove @generated or mark it @generated NOT" + NL
 			+ "\t\treturn super.getResourceLocator();";
 	protected final String TEXT_225 = NL + "} //";
-	protected final String TEXT_226 = NL;
 
 	public ValidatorClass() {
 		//Here is the constructor
@@ -349,8 +348,8 @@ public class ValidatorClass extends org.eclipse.egf.emf.pattern.base.GenPackageJ
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_226);
-		stringBuffer.append(TEXT_226);
+		stringBuffer.append(TEXT_15);
+		stringBuffer.append(TEXT_15);
 		return stringBuffer.toString();
 	}
 

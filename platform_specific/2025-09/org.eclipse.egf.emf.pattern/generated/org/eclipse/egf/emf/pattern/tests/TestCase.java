@@ -106,7 +106,6 @@ public class TestCase extends org.eclipse.egf.emf.pattern.base.GenClassJava {
 			+ "\t\tsetFixture(null);" + NL + "\t}";
 	protected final String TEXT_64 = NL;
 	protected final String TEXT_65 = NL + "} //";
-	protected final String TEXT_66 = NL;
 
 	public TestCase() {
 		//Here is the constructor
@@ -142,8 +141,8 @@ public class TestCase extends org.eclipse.egf.emf.pattern.base.GenClassJava {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_66);
-		stringBuffer.append(TEXT_66);
+		stringBuffer.append(TEXT_64);
+		stringBuffer.append(TEXT_64);
 		return stringBuffer.toString();
 	}
 

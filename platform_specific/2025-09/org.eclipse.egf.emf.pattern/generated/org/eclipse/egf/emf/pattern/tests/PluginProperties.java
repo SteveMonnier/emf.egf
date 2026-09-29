@@ -31,7 +31,6 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.base.GenModelP
 	protected final String TEXT_2 = NL + NL + "pluginName = ";
 	protected final String TEXT_3 = NL + "providerName = ";
 	protected final String TEXT_4 = NL;
-	protected final String TEXT_5 = NL;
 
 	public PluginProperties() {
 		//Here is the constructor
@@ -67,8 +66,8 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.base.GenModelP
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_5);
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_4);
 		return stringBuffer.toString();
 	}
 

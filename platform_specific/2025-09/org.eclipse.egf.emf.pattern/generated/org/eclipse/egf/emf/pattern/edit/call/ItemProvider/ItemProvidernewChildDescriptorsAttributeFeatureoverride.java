@@ -37,7 +37,6 @@ public class ItemProvidernewChildDescriptorsAttributeFeatureoverride {
 	protected final String TEXT_7 = ")));";
 	protected final String TEXT_8 = " // TODO: ensure this is a valid literal value";
 	protected final String TEXT_9 = NL;
-	protected final String TEXT_10 = NL;
 
 	public ItemProvidernewChildDescriptorsAttributeFeatureoverride() {
 		//Here is the constructor
@@ -113,8 +112,8 @@ public class ItemProvidernewChildDescriptorsAttributeFeatureoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_10);
-		stringBuffer.append(TEXT_10);
+		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_9);
 		return stringBuffer.toString();
 	}
 

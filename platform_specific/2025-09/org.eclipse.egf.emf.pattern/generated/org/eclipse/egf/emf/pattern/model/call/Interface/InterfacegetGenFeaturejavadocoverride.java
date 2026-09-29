@@ -63,7 +63,6 @@ public class InterfacegetGenFeaturejavadocoverride {
 	protected final String TEXT_34 = NL + "\t *        ";
 	protected final String TEXT_35 = NL + "\t * @model";
 	protected final String TEXT_36 = NL + "\t * @generated" + NL + "\t */" + NL;
-	protected final String TEXT_37 = NL;
 
 	public InterfacegetGenFeaturejavadocoverride() {
 		//Here is the constructor
@@ -180,8 +179,8 @@ public class InterfacegetGenFeaturejavadocoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_37);
-		stringBuffer.append(TEXT_37);
+		stringBuffer.append(TEXT_19);
+		stringBuffer.append(TEXT_19);
 		return stringBuffer.toString();
 	}
 

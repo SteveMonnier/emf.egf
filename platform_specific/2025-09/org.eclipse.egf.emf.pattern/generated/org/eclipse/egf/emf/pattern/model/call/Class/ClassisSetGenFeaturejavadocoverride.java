@@ -44,7 +44,6 @@ public class ClassisSetGenFeaturejavadocoverride {
 	protected final String TEXT_14 = ")";
 	protected final String TEXT_15 = NL + "\t * ";
 	protected final String TEXT_16 = NL + "\t * @generated" + NL + "\t */" + NL;
-	protected final String TEXT_17 = NL;
 
 	public ClassisSetGenFeaturejavadocoverride() {
 		//Here is the constructor
@@ -161,8 +160,8 @@ public class ClassisSetGenFeaturejavadocoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_17);
-		stringBuffer.append(TEXT_17);
+		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_6);
 		return stringBuffer.toString();
 	}
 

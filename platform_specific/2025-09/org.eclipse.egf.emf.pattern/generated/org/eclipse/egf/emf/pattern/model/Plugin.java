@@ -89,7 +89,6 @@ public class Plugin extends org.eclipse.egf.emf.pattern.base.GenModelJava {
 	protected final String TEXT_37 = " createBundle()" + NL + "\t\t\t{" + NL + "\t\t\t\treturn new Implementation();"
 			+ NL + "\t\t\t}" + NL + "\t\t}";
 	protected final String TEXT_38 = NL + "}";
-	protected final String TEXT_39 = NL;
 
 	public Plugin() {
 		//Here is the constructor
@@ -125,8 +124,8 @@ public class Plugin extends org.eclipse.egf.emf.pattern.base.GenModelJava {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_39);
-		stringBuffer.append(TEXT_39);
+		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_14);
 		return stringBuffer.toString();
 	}
 

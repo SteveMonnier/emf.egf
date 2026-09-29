@@ -42,7 +42,6 @@ public class InterfaceunsetGenFeaturejavadocoverride {
 	protected final String TEXT_13 = ")";
 	protected final String TEXT_14 = NL + "\t * ";
 	protected final String TEXT_15 = NL + "\t * @generated" + NL + "\t */" + NL;
-	protected final String TEXT_16 = NL;
 
 	public InterfaceunsetGenFeaturejavadocoverride() {
 		//Here is the constructor
@@ -159,8 +158,8 @@ public class InterfaceunsetGenFeaturejavadocoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_16);
-		stringBuffer.append(TEXT_16);
+		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_6);
 		return stringBuffer.toString();
 	}
 

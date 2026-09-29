@@ -73,7 +73,6 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.base.GenModelText {
 	protected final String TEXT_39 = NL + NL + "   <extension point=\"org.eclipse.emf.ecore.extension_parser\">";
 	protected final String TEXT_40 = NL + "      <parser" + NL + "            type=\"";
 	protected final String TEXT_41 = NL + NL + "</plugin>" + NL;
-	protected final String TEXT_42 = NL;
 
 	public PluginXML() {
 		//Here is the constructor
@@ -109,8 +108,8 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.base.GenModelText {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_42);
-		stringBuffer.append(TEXT_42);
+		stringBuffer.append(TEXT_2);
+		stringBuffer.append(TEXT_2);
 		return stringBuffer.toString();
 	}
 

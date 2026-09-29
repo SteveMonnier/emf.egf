@@ -103,7 +103,6 @@ public class AdapterFactoryClass extends org.eclipse.egf.emf.pattern.base.GenPac
 			+ "\t */" + NL + "\tpublic Adapter create";
 	protected final String TEXT_42 = "Adapter()" + NL + "\t{" + NL + "\t\treturn null;" + NL + "\t}" + NL + "" + NL
 			+ "} //";
-	protected final String TEXT_43 = NL;
 
 	public AdapterFactoryClass() {
 		//Here is the constructor
@@ -139,8 +138,8 @@ public class AdapterFactoryClass extends org.eclipse.egf.emf.pattern.base.GenPac
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_43);
-		stringBuffer.append(TEXT_43);
+		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_14);
 		return stringBuffer.toString();
 	}
 

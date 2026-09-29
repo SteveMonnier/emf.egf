@@ -39,7 +39,6 @@ public class ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride {
 	protected final String TEXT_8 = ".create";
 	protected final String TEXT_9 = "())));";
 	protected final String TEXT_10 = NL;
-	protected final String TEXT_11 = NL;
 
 	public ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride() {
 		//Here is the constructor
@@ -115,8 +114,8 @@ public class ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_11);
-		stringBuffer.append(TEXT_11);
+		stringBuffer.append(TEXT_10);
+		stringBuffer.append(TEXT_10);
 		return stringBuffer.toString();
 	}
 

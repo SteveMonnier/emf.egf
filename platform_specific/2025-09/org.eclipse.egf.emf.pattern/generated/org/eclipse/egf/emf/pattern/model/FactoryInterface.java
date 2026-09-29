@@ -1696,7 +1696,6 @@ public class FactoryInterface extends org.eclipse.egf.emf.pattern.base.GenPackag
 		stringBuffer.append(TEXT_218);
 		stringBuffer.append(isInterface ? genPackage.getFactoryInterfaceName() : genPackage.getFactoryClassName());
 		genModel.emitSortedImports();
-		stringBuffer.append(TEXT_4);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
 	}

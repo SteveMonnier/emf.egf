@@ -101,7 +101,6 @@ public class InterfacedeclaredFieldGenFeatureoverride {
 	protected final String TEXT_63 = NL + "\t/**" + NL + "\t * This is true if the ";
 	protected final String TEXT_64 = NL + "\tprotected boolean ";
 	protected final String TEXT_65 = "ESet;" + NL;
-	protected final String TEXT_66 = NL;
 
 	public InterfacedeclaredFieldGenFeatureoverride() {
 		//Here is the constructor
@@ -218,8 +217,8 @@ public class InterfacedeclaredFieldGenFeatureoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_66);
-		stringBuffer.append(TEXT_66);
+		stringBuffer.append(TEXT_32);
+		stringBuffer.append(TEXT_32);
 		return stringBuffer.toString();
 	}
 

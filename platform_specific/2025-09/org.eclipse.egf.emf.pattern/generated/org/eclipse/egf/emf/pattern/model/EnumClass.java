@@ -176,7 +176,6 @@ public class EnumClass extends org.eclipse.egf.emf.pattern.base.GenEnumJava {
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tprotected Internal";
 	protected final String TEXT_99 = " literal)" + NL + "\t{" + NL + "\t\tsuper(value, name, literal);" + NL + "\t}"
 			+ NL + "}";
-	protected final String TEXT_100 = NL;
 
 	public EnumClass() {
 		//Here is the constructor
@@ -212,8 +211,8 @@ public class EnumClass extends org.eclipse.egf.emf.pattern.base.GenEnumJava {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_100);
-		stringBuffer.append(TEXT_100);
+		stringBuffer.append(TEXT_39);
+		stringBuffer.append(TEXT_39);
 		return stringBuffer.toString();
 	}
 

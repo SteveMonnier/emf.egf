@@ -62,7 +62,6 @@ public class ModelTestSuite extends org.eclipse.egf.emf.pattern.base.GenModelJav
 	protected final String TEXT_25 = "(String name)" + NL + "\t{" + NL + "\t\tsuper(name);" + NL + "\t}" + NL + "" + NL
 			+ "} //";
 	protected final String TEXT_26 = NL;
-	protected final String TEXT_27 = NL;
 
 	public ModelTestSuite() {
 		//Here is the constructor
@@ -98,8 +97,8 @@ public class ModelTestSuite extends org.eclipse.egf.emf.pattern.base.GenModelJav
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_27);
-		stringBuffer.append(TEXT_27);
+		stringBuffer.append(TEXT_26);
+		stringBuffer.append(TEXT_26);
 		return stringBuffer.toString();
 	}
 

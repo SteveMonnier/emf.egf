@@ -40,7 +40,6 @@ public class TestCasegetGenFeatureoverride {
 	protected final String TEXT_10 = NL + "\tpublic void test";
 	protected final String TEXT_11 = "()" + NL + "\t{";
 	protected final String TEXT_12 = NL + "\t}" + NL;
-	protected final String TEXT_13 = NL;
 
 	public TestCasegetGenFeatureoverride() {
 		//Here is the constructor
@@ -96,8 +95,8 @@ public class TestCasegetGenFeatureoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_13);
-		stringBuffer.append(TEXT_13);
+		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_8);
 		return stringBuffer.toString();
 	}
 

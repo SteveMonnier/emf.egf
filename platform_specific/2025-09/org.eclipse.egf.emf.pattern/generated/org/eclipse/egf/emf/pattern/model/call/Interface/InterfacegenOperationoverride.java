@@ -103,7 +103,6 @@ public class InterfacegenOperationoverride {
 	protected final String TEXT_66 = " ite)" + NL + "\t\t{" + NL + "\t\t\tthrow new ";
 	protected final String TEXT_67 = "(ite);" + NL + "\t\t}";
 	protected final String TEXT_68 = NL + "\t}" + NL;
-	protected final String TEXT_69 = NL;
 
 	public InterfacegenOperationoverride() {
 		//Here is the constructor
@@ -220,8 +219,8 @@ public class InterfacegenOperationoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_69);
-		stringBuffer.append(TEXT_69);
+		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_14);
 		return stringBuffer.toString();
 	}
 

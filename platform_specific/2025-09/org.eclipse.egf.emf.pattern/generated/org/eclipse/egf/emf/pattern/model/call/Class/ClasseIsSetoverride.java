@@ -81,7 +81,6 @@ public class ClasseIsSetoverride {
 	protected final String TEXT_50 = "\t\treturn super.eIsSet(featureID);";
 	protected final String TEXT_51 = "\t\treturn eDynamicIsSet(featureID);";
 	protected final String TEXT_52 = NL + "\t}" + NL + NL;
-	protected final String TEXT_53 = NL;
 
 	public ClasseIsSetoverride() {
 		//Here is the constructor
@@ -193,8 +192,8 @@ public class ClasseIsSetoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_53);
-		stringBuffer.append(TEXT_53);
+		stringBuffer.append(TEXT_49);
+		stringBuffer.append(TEXT_49);
 		return stringBuffer.toString();
 	}
 

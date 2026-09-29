@@ -73,7 +73,6 @@ public class ItemProvidergetStyledTextoverride {
 	protected final String TEXT_43 = NL + "\t\t}" + NL + "\t\treturn styledLabel;";
 	protected final String TEXT_44 = "_type\"));";
 	protected final String TEXT_45 = NL;
-	protected final String TEXT_46 = NL;
 
 	public ItemProvidergetStyledTextoverride() {
 		//Here is the constructor
@@ -139,8 +138,8 @@ public class ItemProvidergetStyledTextoverride {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_46);
-		stringBuffer.append(TEXT_46);
+		stringBuffer.append(TEXT_45);
+		stringBuffer.append(TEXT_45);
 		return stringBuffer.toString();
 	}
 
